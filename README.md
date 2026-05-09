@@ -21,7 +21,9 @@ AI Generation: YandexGPT генерирует отчёт с температур
 Audit Trail: Все запросы логируются в JSONL с метками времени и версиями моделей.
 Safety: Изолированное исполнение условий (safe_eval), строгие промпты, дисклеймеры.
 Скриншоты
-<img width="407" height="391" alt="1" src="https://github.com/user-attachments/assets/be6696f1-185c-4c9b-8761-b6214eece972" />
+![FinCompliance Demo](screenshots/1.jpg)
+![FinCompliance Demo](screenshots/2.jpg)
+![FinCompliance Demo](screenshots/3.jpg)
 
 
 
