@@ -1,25 +1,27 @@
 # 🏦 FinCompliance Assistant (RU 2026)
 
-AI-powered Compliance Co-Pilot for Russian Financial Regulation.  
-Automates AML/KYC rule evaluation, generates regulator-ready reports with full AI traceability, and enforces Human-in-the-Loop controls.
+**AI Co-Pilot для финансового комплаенса**  
+Автоматическая проверка транзакций на соответствие 115-ФЗ, генерация отчётов с трассировкой AI и Human-in-the-Loop контролем.
 
-## ⚡ Quick Start
+## 🚀 Быстрый старт
+Запуск веб-интерфейса (демо за 1 минуту):
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Serx17/fincompliance-ai.git
 cd fincompliance-ai
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env  # Заполните YANDEX_API_KEY и FOLDER_ID
-python run_pipeline.py
+# Создайте файл .env и добавьте YANDEX_API_KEY и FOLDER_ID
+streamlit run app.py
 
-📐 Architecture
-See docs/ARCHITECTURE.md for Mermaid diagrams & data flow.
-🛡 Compliance & Security
-rules/aml_rules.json — versioned, Pydantic-validated regulatory rules (115-ФЗ)
-audit_*.jsonl — immutable, timestamped AI interaction logs
-Temperature=0.2 + disclaimer injection — prevents LLM hallucination
-Human-in-the-Loop by design: AI drafts, legal expert approves
-📦 Tech Stack
-Python 3.11+ | YandexGPT | Pydantic V2 | FastAPI-ready | Docker-ready | 115-ФЗ/152-ФЗ aligned
+🏗 Архитектура
+Проект построен по принципам Compliance-by-Design:
+Rule Engine: Машиночитаемые правила в rules/aml_rules.json (Pydantic validation).
+AI Generation: YandexGPT генерирует отчёт с температурой 0.2 (минимум галлюцинаций).
+Audit Trail: Все запросы логируются в JSONL с метками времени и версиями моделей.
+Safety: Изолированное исполнение условий (safe_eval), строгие промпты, дисклеймеры.
+Скриншоты
+(Здесь можно добавить скриншот вашего интерфейса, если умеете, или просто оставить текст)
 ⚖️ Disclaimer
-This project is a technical demonstration. It does not replace licensed legal counsel or official CB RF compliance procedures. All AI outputs require mandatory human verification.
+Это демонстрационный проект (Proof of Concept). Не предназначен для реального использования в боевом контуре без аудита безопасности.
+
