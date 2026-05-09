@@ -1,0 +1,22 @@
+[
+  {
+    "rule_id": "AML_115_3_1",
+    "title": "Идентификация при крупном переводе",
+    "description": "При переводе свыше 600 000 ₽ требуется подтверждённая идентификация клиента",
+    "condition": "transaction_amount >= 600000 and client_kyc_status != 'verified'",
+    "action": "flag_risk('HIGH'), require_manual_review()",
+    "source": "115-ФЗ, ст. 7, п. 3",
+    "version": "2026-01-15",
+    "severity": "high"
+  },
+ {
+  "rule_id": "AML_115_6_2",
+  "title": "Проверка бенефициара",
+  "description": "Для юрлиц требуется идентификация бенефициарного владельца",
+  "condition": "client_type == 'legal' and beneficial_owner_verified == False",
+  "action": "flag_risk('MEDIUM'), request_documents('beneficial_owner')",
+  "source": "115-ФЗ, ст. 6, п. 2",
+  "version": "2026-01-15",
+  "severity": "medium"
+}
+]

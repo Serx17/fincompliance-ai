@@ -1,0 +1,5 @@
+python-dotenv==1.0.1
+yandexcloud==0.296.0
+requests==2.32.3
+fastapi==0.115.0
+uvicorn==0.30.6
