@@ -5,7 +5,6 @@
 
 ## 🚀 Быстрый старт
 Запуск веб-интерфейса (демо за 1 минуту):
-```bash
 git clone https://github.com/Serx17/fincompliance-ai.git
 cd fincompliance-ai
 python -m venv .venv
